@@ -1,3 +1,5 @@
+const pgConnection = process.env.PG_URL
+
 const common = {
   client: 'sqlite3',
   useNullAsDefault: true,
@@ -19,9 +21,13 @@ module.exports = {
     },
   },
   production: {
-    ...common,
-    connection: {
-      filename: './data/production.db3',
-    }
+    client: "pg",
+    connection: pgConnection,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: { directory: './data/migrations' },
+    seeds: { directory: './data/seeds' },
   },
 };
