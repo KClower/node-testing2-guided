@@ -1,5 +1,7 @@
-const pgConnection = process.env.PG_URL
+require('dotenv').config();
 
+const pgConnection = process.env.PG_URL
+console.log("Using database: ", pgConnection)
 const common = {
   client: 'sqlite3',
   useNullAsDefault: true,
@@ -22,6 +24,7 @@ module.exports = {
   },
   production: {
     client: "pg",
+    ssl: { rejectUnauthorized: false },
     connection: pgConnection,
     pool: {
       min: 2,
