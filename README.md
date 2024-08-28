@@ -12,3 +12,13 @@ Guided project for **Node Server Testing** Module.
 - [ ] type `npm run server` to start the API.
 
 Please follow along as the instructor adds automated tests to the API.
+
+
+
+## Testing Endpoints
+- run server
+- make request to the endpoint
+- inspect response
+- assert that the response content is what we expected
+
+
