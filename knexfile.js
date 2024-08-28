@@ -19,6 +19,9 @@ module.exports = {
     },
   },
   production: {
-
+    ...common,
+    connection: {
+      filename: './data/production.db3',
+    }
   },
 };
