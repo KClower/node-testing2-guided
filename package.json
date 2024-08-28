@@ -9,6 +9,8 @@
     "start": "node index.js",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run",
+    "render:migrate": "cross-env NODE_ENV=production knex migrate:latest",
+    "render:seed": "cross-env NODE_ENV=production knex seed:run",
     "ketchup": "git fetch && git reset --hard origin/lecture"
   },
   "dependencies": {
